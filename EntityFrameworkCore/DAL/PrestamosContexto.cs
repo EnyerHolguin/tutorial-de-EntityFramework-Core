@@ -23,7 +23,7 @@ namespace EntityFrameworkCore.DAL
             if (!optionsBuilder.IsConfigured)
             {
 
-                optionsBuilder.UseSqlite("@” Data Source = Prestamos.db”;");
+                optionsBuilder.UseSqlite(@"Data Source = Prestamos.db");
             }
         }
 

@@ -19,10 +19,11 @@ namespace EntityFrameworkCore.Migrations
 
             modelBuilder.Entity("EntityFrameworkCore.Models.Prestamos", b =>
                 {
-                    b.Property<string>("Nombres")
+                    b.Property<int>("PrestamosId")
+                        .ValueGeneratedOnAdd()
                         .HasMaxLength(100)
                         .IsUnicode(false)
-                        .HasColumnType("TEXT");
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Apellidos")
                         .IsRequired()
@@ -38,7 +39,13 @@ namespace EntityFrameworkCore.Migrations
                     b.Property<DateTime>("FechaNacimiento")
                         .HasColumnType("date");
 
-                    b.HasKey("Nombres");
+                    b.Property<string>("Nombres")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .IsUnicode(false)
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("PrestamosId");
 
                     b.ToTable("Prestamos");
                 });

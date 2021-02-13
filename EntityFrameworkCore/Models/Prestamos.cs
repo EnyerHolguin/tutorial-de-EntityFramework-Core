@@ -8,6 +8,7 @@ namespace EntityFrameworkCore.Models
     public class Prestamos
     {
             [Key]
+            public int PrestamosId { get; set; }
             public string Nombres { get; set; }
             public string Apellidos { get; set; }
             public string Cedula { get; set; }

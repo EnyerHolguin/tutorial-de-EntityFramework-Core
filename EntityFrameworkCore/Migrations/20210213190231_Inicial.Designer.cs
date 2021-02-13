@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EntityFrameworkCore.Migrations
 {
     [DbContext(typeof(PrestamosContexto))]
-    [Migration("20210212182248_Inicial")]
+    [Migration("20210213190231_Inicial")]
     partial class Inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,10 +21,11 @@ namespace EntityFrameworkCore.Migrations
 
             modelBuilder.Entity("EntityFrameworkCore.Models.Prestamos", b =>
                 {
-                    b.Property<string>("Nombres")
+                    b.Property<int>("PrestamosId")
+                        .ValueGeneratedOnAdd()
                         .HasMaxLength(100)
                         .IsUnicode(false)
-                        .HasColumnType("TEXT");
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Apellidos")
                         .IsRequired()
@@ -40,7 +41,13 @@ namespace EntityFrameworkCore.Migrations
                     b.Property<DateTime>("FechaNacimiento")
                         .HasColumnType("date");
 
-                    b.HasKey("Nombres");
+                    b.Property<string>("Nombres")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .IsUnicode(false)
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("PrestamosId");
 
                     b.ToTable("Prestamos");
                 });

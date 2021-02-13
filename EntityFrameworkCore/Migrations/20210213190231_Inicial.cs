@@ -11,6 +11,8 @@ namespace EntityFrameworkCore.Migrations
                 name: "Prestamos",
                 columns: table => new
                 {
+                    PrestamosId = table.Column<int>(type: "INTEGER", unicode: false, maxLength: 100, nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
                     Nombres = table.Column<string>(type: "TEXT", unicode: false, maxLength: 100, nullable: false),
                     Apellidos = table.Column<string>(type: "TEXT", unicode: false, maxLength: 100, nullable: false),
                     Cedula = table.Column<string>(type: "TEXT", unicode: false, maxLength: 15, nullable: true),
@@ -18,7 +20,7 @@ namespace EntityFrameworkCore.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Prestamos", x => x.Nombres);
+                    table.PrimaryKey("PK_Prestamos", x => x.PrestamosId);
                 });
         }
 

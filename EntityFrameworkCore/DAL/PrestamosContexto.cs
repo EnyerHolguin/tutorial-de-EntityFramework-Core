@@ -33,6 +33,11 @@ namespace EntityFrameworkCore.DAL
 
             modelBuilder.Entity<Prestamos>(entity =>
             {
+                entity.Property(p => p.PrestamosId)
+                   .IsRequired()
+                   .HasMaxLength(100)
+                   .IsUnicode(false); 
+
                 entity.Property(p => p.Nombres)
                    .IsRequired()
                    .HasMaxLength(100)

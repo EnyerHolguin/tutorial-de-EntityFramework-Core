@@ -5,36 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EntityFrameworkCore"
         mc:Ignorable="d"
-        Title="Registro Prestamos" Height="300" Width="400">
+        Title="Registro Prestamos" Height="400" Width="400">
     <Grid>
-       
-
-            <StackPanel Orientation="Vertical" Margin="10,10,10,10">
-                <Label Content="Nombre" FontSize="11"/>
-                <StackPanel Orientation="Horizontal">
-                <TextBox Name="NombresTextBox" Width="250" Text="{Binding Cedula}" Height="20" HorizontalAlignment="Left" Margin="5,0"/>
-                    <Button Name="BuscarButton" Content="Buscar" Width="60" Height="20" Click="BuscarButton_Click"/>
-                </StackPanel>
-
-                <Label Content="Apellido" FontSize="11"/>
-                <TextBox Name="ApellidoTextBox" Margin="5,0" Text="{Binding Nombres}" Width="315" Height="20" HorizontalAlignment="Left"/>
-
-                <Label Content="Cedula" FontSize="11"/>
-                <TextBox Name="CedulaTextBox" Margin="5,0" Text="{Binding Apellidos}" Width="315" Height="20" HorizontalAlignment="Left"/>
-
-                <Label Content="Fecha Nacimiento" FontSize="11"/>
-                <DatePicker Name="FechaNacimientoDatePicker" Margin="5,0" SelectedDate="{Binding FechaNacimiento}" Width="315" Height="20" Padding="-1" HorizontalAlignment="Left"/>
 
 
-                <StackPanel Orientation="Horizontal" Width="223" Margin="0, 20">
+        <StackPanel Orientation="Vertical" Margin="10,10,10,10">
+            <Label Content="PrestamosId" FontSize="11"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBox Name="PrestamosIdTextBox" Width="250" Text="{Binding Cedula}" Height="20" HorizontalAlignment="Left" Margin="5,0"/>
+                <Button Name="BuscarButton" Content="Buscar" Width="60" Height="20" Click="BuscarButton_Click" />
+            </StackPanel>
 
-                <Button Name="NuevoButton" Content="Nuevo" Width="60" Height="20" />
-                <Button Name="GuardarButton" Height="20" Width="60" Content="Guardar"  Margin="5,0,0,0"/>
-                <Button Name="EliminarButton" Height="20" Width="60" Content="Eliminar"   Margin="5,0,0,0"/>
+            <Label Content="Nombres" FontSize="11"/>
+            <TextBox Name="NombreTextBox" Margin="5,0" Text="{Binding Nombres}" Width="315" Height="20" HorizontalAlignment="Left"/>
 
-                </StackPanel>
+            <Label Content="Apellido" FontSize="11"/>
+            <TextBox Name="ApellidoTextBox" Margin="5,0" Text="{Binding Apellidos}" Width="315" Height="20" HorizontalAlignment="Left"/>
+            
+            <Label Content="Cedula" FontSize="11"/>
+            <TextBox Name="Cedulatextbox" Margin="5,0"  Width="315" Height="20"  HorizontalAlignment="Left"/>
+
+            <Label Content="Fecha Nacimiento" FontSize="11"/>
+            <DatePicker Name="FechaNacimientoDatePicker" Margin="5,0" SelectedDate="{Binding FechaNacimiento}" Width="315" Height="20" Padding="-1" HorizontalAlignment="Left"/>
+
+
+            <StackPanel Orientation="Horizontal" Width="223" Margin="0, 20">
+                <Button x:Name="NuevoButton" Content="Nuevo" Width="60" Height="20" Click="NuevoButton_Click" />
+                <Button x:Name="GuardarButton" Height="20" Width="60" Content="Guardar"  Margin="5,0,0,0" Click="GuardarButton_Click"/>
+                <Button x:Name="EliminarButton" Height="20" Width="60" Content="Eliminar"   Margin="5,0,0,0" Click="EliminarButton_Click"/>
 
             </StackPanel>
+
+        </StackPanel>
 
     </Grid>
 </Window>
